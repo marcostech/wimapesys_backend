@@ -7,8 +7,8 @@ const Mono = require('../models/Mono');
 
 module.exports = {
     async index(request, response){                     
-        const { num_serie_teste } = request.query;
-        const mono = await Mono.findOne({num_serie_teste});
+        const { user } = request.query; //num_serie_teste
+        const mono = await Mono.findOne({user}); //num_serie_teste
         if(mono!=null){
             return response.json(mono);
             } else{
