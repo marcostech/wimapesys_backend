@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const MonoSchema = new mongoose.Schema ({
+const EquipamentosSchema = new mongoose.Schema ({
     //identificadores
     data: {type:String, required:true},
     resp_teste: {type:String, required:true},
@@ -61,4 +61,4 @@ const MonoSchema = new mongoose.Schema ({
     obs_aprov: {type:String, required:true},
 });
 
-module.exports = mongoose.model('Cadastro_luffe', MonoSchema);
+module.exports = mongoose.model('equipamentosCadastrados', EquipamentosSchema);

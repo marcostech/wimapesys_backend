@@ -1,18 +1,21 @@
 const { Router } = require('express');
 const SearchController = require('./controllers/SearchController');
-const Mono = require('./models/Mono');
-const MonoController = require('./controllers/MonoController');
-
+const EquipamentoController = require('./controllers/EquipamentoController');
+const CadastroController = require('./controllers/CadastroController');
 
 const routes = Router();
 
-//routes.put('/devs', DevController.update);
-
-//app luffe cadastro
-routes.post('/monos', MonoController.create);
-routes.delete('/monos', MonoController.delete);
-routes.get('/monos', MonoController.index);
-routes.put('/monos', MonoController.update);
+//CRUD de Cadastro de Equipamentos
+routes.post('/equip', EquipamentoController.create);
+routes.delete('/equip', EquipamentoController.delete);
+routes.get('/equip', EquipamentoController.index);
+routes.put('/equip', EquipamentoController.update);
+//CRUD de Cadastro de usuarios
+routes.post('/cadastro', CadastroController.create);
+routes.delete('/cadastro', CadastroController.delete);
+routes.get('/cadastro', CadastroController.index);
+routes.put('/cadastro', CadastroController.update);
+//Search padrão
 routes.get('/search', SearchController.index);
 
 module.exports = routes;
